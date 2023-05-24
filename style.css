@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #242424;
+  color: azure;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo-akatsuki {
+  overflow: hidden;
+  position: relative;
+  width: 50%;
+  aspect-ratio: 4/2;
+  background-image: url("./assets/AkatsukiLogo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#logo-akatsuki::after {
+  transform: translateX(0%);
+  mix-blend-mode: saturation;
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: shine 1s linear infinite;
+  background: #AB3;
+  opacity: 1;
+  background: linear-gradient(to right, #ffffff23 0%, #ffffff 50%, #ffffff56 100%);
+}
+
+#logo-nintendo {
+  overflow: hidden;
+  position: relative;
+  width: 50%;
+  aspect-ratio: 4/2;
+  background-image: url("./assets/nintendo-logo.webp");
+  background-size: contain;
+  /* filter: brightness(1); */
+  background-repeat: no-repeat;
+}
+/* saturation, hue */
+#logo-nintendo::after {
+  mix-blend-mode: hue;
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  filter: blur();
+  animation: shine 1s linear infinite;
+  background: #AB3;
+  opacity: 1;
+  background: linear-gradient(to right, #2a330047 0%, #305e00 50%, #4d5b0011 100%);
+}
+
+@keyframes shine {
+  0% {
+    /* opacity: 0; */
+    /* background: linear-gradient(to right, #ffffff1c 0%, #ffffff95 50%, #15ff00 100%); */
+    left: -100%;
+    filter: brightness(0);
+    /* left: 0; */
+  }
+  100% {
+    filter: brightness(2);
+    /* opacity: 1; */
+    /* background: linear-gradient(to right, #ffffff1c 0%, #ffffff95 50%, #26ff00 100%); */
+    left: 100%;
+  }
+}
