@@ -22,23 +22,28 @@ main {
   overflow: hidden;
   position: relative;
   width: 50%;
-  aspect-ratio: 4/2;
+  aspect-ratio: 16/9;
   background-image: url("./assets/AkatsukiLogo.png");
   background-size: contain;
   background-repeat: no-repeat;
+  -webkit-mask-image: url("./assets/AkatsukiLogo.png");
+  -webkit-mask-mode: alpha;
+  -webkit-mask-size: contain;
+  mask-image: url("./assets/AkatsukiLogo.png");
+  mask-mode: alpha;
+  mask-size: contain;
 }
 
 #logo-akatsuki::after {
-  transform: translateX(0%);
-  mix-blend-mode: saturation;
+  transform: rotate(21deg) translateY(calc((100% / 3) * -1));
+  mix-blend-mode: luminosity;
   content: '';
   position: absolute;
-  height: 100%;
+  height: 200%;
   width: 100%;
   animation: shine 1s linear infinite;
-  background: #AB3;
   opacity: 1;
-  background: linear-gradient(to right, #ffffff23 0%, #ffffff 50%, #ffffff56 100%);
+  background: linear-gradient(90deg, #ffffff00 0%, #ffffff 50%, #ffffff00 100%);
 }
 
 #logo-nintendo {
