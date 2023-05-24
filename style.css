@@ -53,16 +53,16 @@ main {
 }
 /* saturation, hue */
 #logo-nintendo::after {
-  mix-blend-mode: hue;
   content: '';
   position: absolute;
   height: 100%;
   width: 100%;
-  filter: blur();
+  background-blend-mode: saturation;
+  mix-blend-mode: darken;
+  isolation: isolate;
+  border: 1px solid #fff;
   animation: shine 1s linear infinite;
-  background: #AB3;
-  opacity: 1;
-  background: linear-gradient(to right, #2a330047 0%, #305e00 50%, #4d5b0011 100%);
+  background: linear-gradient(to right, #ffffff00 0%, #313131 50%, #4d5b0000 100%);
 }
 
 @keyframes shine {
@@ -70,13 +70,12 @@ main {
     /* opacity: 0; */
     /* background: linear-gradient(to right, #ffffff1c 0%, #ffffff95 50%, #15ff00 100%); */
     left: -100%;
-    filter: brightness(0);
     /* left: 0; */
   }
   100% {
-    filter: brightness(2);
     /* opacity: 1; */
     /* background: linear-gradient(to right, #ffffff1c 0%, #ffffff95 50%, #26ff00 100%); */
     left: 100%;
+    /* left: 0; */
   }
 }
